@@ -145,7 +145,15 @@ namespace Tizen.NUI.Samples
             group2.AddDrawable(circleShape);
             canvasView.AddDrawable(group2);
 
+            Picture picture  = new Picture();
+            picture.Load(CommonResource.GetDaliResourcePath() + "DaliDemo/Kid1.svg");
+            picture.SetSize(new Size2D(150, 150));
+            picture.Translate(300.0f, 550.0f);
+            canvasView.AddDrawable(picture);
+
             // Test Getter
+            log.Debug(tag, "picture size : " + picture.GetSize().Width + " " + picture.GetSize().Height + "\n");
+
             log.Debug(tag, "circleShape Color : " + circleShape.FillColor.R + " " + circleShape.FillColor.G + " " + circleShape.FillColor.B + " " + circleShape.FillColor.A + "\n");
             log.Debug(tag, "circleShape StrokeColor : " + circleShape.StrokeColor.R + " " + circleShape.StrokeColor.G + " " + circleShape.StrokeColor.B + " " + circleShape.StrokeColor.A + "\n");
 
